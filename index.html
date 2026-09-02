@@ -1,15 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style id="ird-universal-styles">
+/* IRD Infratech website styles extracted from the original homepage. */
+
+:root{
+  --navy:#0b151d; --navy2:#111f29; --green:#0b7a4b; --lime:#91bd24;
+  --gold:#d4a94f; --cream:#f5f4ef; --white:#fff; --muted:#65727b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,Helvetica,sans-serif;color:var(--navy);background:var(--cream);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,90%);margin:auto}
+.nav{position:fixed;top:0;left:0;width:100%;z-index:20;background:rgba(11,21,29,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-inner{height:78px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800;letter-spacing:.5px}
+.brand img{width:62px;height:52px;object-fit:contain;object-position:center;border-radius:7px;background:#fff}
+.brand span{font-size:15px;line-height:1.15}.brand small{display:block;font-weight:500;color:#aeb8be;font-size:10px;letter-spacing:1.4px;margin-top:3px}
+.nav-links{display:flex;gap:28px;color:#d9e0e4;font-size:14px}.nav-links a:hover{color:#a9d53b}
+.menu{display:none;color:#fff;font-size:26px;background:none;border:0}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:
+radial-gradient(circle at 78% 40%,rgba(145,189,36,.16),transparent 34%),
+linear-gradient(120deg,#071018 0%,#0b151d 48%,#16252e 100%)}
+.hero:after{content:"";position:absolute;right:-12%;bottom:-25%;width:55%;height:70%;background:radial-gradient(circle,rgba(145,189,36,.25),transparent 65%)}
+.hero-content{position:relative;z-index:2;padding-top:70px;color:#fff;max-width:760px}
+.kicker{color:#a9d53b;letter-spacing:4px;font-weight:800;font-size:13px;margin-bottom:18px}
+h1{font-size:clamp(46px,7vw,84px);line-height:.98;letter-spacing:-3px;margin-bottom:24px}
+.hero p{font-size:19px;color:#d4dde2;max-width:650px}
+.tagline{margin-top:15px;color:#fff;font-weight:700;font-size:15px;letter-spacing:1.8px}
+.actions{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+.btn{padding:14px 24px;border-radius:2px;font-weight:800;font-size:14px;display:inline-block}
+.btn-primary{background:#a9d53b;color:#0b151d}.btn-primary:hover{background:#c0e866}
+.btn-outline{border:1px solid rgba(255,255,255,.6);color:#fff}.btn-outline:hover{background:#fff;color:#0b151d}
+section{padding:100px 0}
+.eyebrow{font-size:12px;letter-spacing:3px;color:var(--green);font-weight:900;margin-bottom:12px}
+h2{font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-1.8px}
+.about{background:#fff}.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:start}
+.about-copy{font-size:18px;color:#47545d}.about-copy p+p{margin-top:18px}
+.info-card{background:var(--navy);color:#fff;padding:38px;position:relative;overflow:hidden}
+.info-card:before{content:"";position:absolute;right:-70px;top:-70px;width:200px;height:200px;border-radius:50%;background:rgba(145,189,36,.15)}
+.info-card h3{font-size:27px;margin-bottom:18px}.info-card p{color:#c7d0d5;margin:10px 0}.info-card strong{color:#fff}
+.services{background:#0f1c24;color:#fff}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:45px}
+.service{padding:30px;border:1px solid rgba(255,255,255,.12);min-height:220px;transition:.25s}
+.service:hover{transform:translateY(-6px);border-color:#a9d53b}.service-grid .service:nth-child(4){grid-column:1}.service-grid .service:nth-child(5){grid-column:2}
+.num{color:#a9d53b;font-weight:900;font-size:12px;letter-spacing:2px}.service h3{font-size:21px;margin:35px 0 12px}.service p{color:#aeb9bf;font-size:14px}
+.projects{background:var(--cream)}.project-note{margin-top:10px;color:var(--muted)}.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:45px}
+.project{background:#fff;min-height:260px;display:flex;flex-direction:column;justify-content:end;position:relative;overflow:hidden}
+.project-placeholder{height:190px;background:linear-gradient(135deg,#d8ded8,#9ba8a4);display:grid;place-items:center;color:#44504e;font-size:12px;letter-spacing:2px;font-weight:900}
+.project-body{padding:20px}.project-body small{color:var(--green);font-weight:800;letter-spacing:1.5px}.project-body h3{margin-top:4px}
+.stats{background:#a9d53b;color:#0b151d}.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.stat strong{font-size:46px;line-height:1;display:block}.stat span{display:block;margin-top:8px;font-weight:700}
+.contact{background:#fff}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}.contact-copy{color:#526069;font-size:17px;margin-top:18px}.details{margin-top:28px;display:grid;gap:16px}.detail{display:flex;gap:14px;align-items:flex-start}.icon{width:38px;height:38px;border-radius:50%;background:#eaf2df;display:grid;place-items:center;color:var(--green);font-weight:900;flex:none}.detail div strong{display:block;color:#18252d}.detail div span{color:#637078;font-size:14px}
+.contact-box{background:var(--navy);padding:40px;color:#fff}.contact-box h3{font-size:30px}.contact-box p{color:#b9c3c8;margin:12px 0 28px}.quick{display:flex;gap:12px;flex-wrap:wrap}.quick a{padding:12px 18px;border:1px solid rgba(255,255,255,.25);color:#fff;font-weight:800;font-size:13px}.quick a:hover{background:#fff;color:var(--navy)}
+footer{background:#080f14;color:#89959c;padding:28px 0;font-size:13px}.foot{display:flex;justify-content:space-between;gap:20px}.foot strong{color:#fff}
+.reveal{opacity:0;transform:translateY(20px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:900px){
+ .nav-links{display:none}.menu{display:block}.nav-links.open{display:flex;position:absolute;top:78px;left:0;width:100%;background:#0b151d;flex-direction:column;padding:20px 5%;gap:18px}
+ .about-grid,.contact-grid{grid-template-columns:1fr;gap:40px}.service-grid{grid-template-columns:repeat(2,1fr)}.service-grid .service:nth-child(4),.service-grid .service:nth-child(5){grid-column:auto}.project-grid{grid-template-columns:1fr 1fr}.stat-grid{grid-template-columns:repeat(2,1fr);gap:35px}
+}
+@media(max-width:600px){
+ h1{letter-spacing:-2px}.hero{background-position:62% center}.hero p{font-size:16px}
+ section{padding:75px 0}.service-grid,.project-grid{grid-template-columns:1fr}.service-grid .service:nth-child(4),.service-grid .service:nth-child(5){grid-column:auto}.stat-grid{grid-template-columns:1fr 1fr}.foot{flex-direction:column}
+}
+
+.creator-credit{margin-top:14px;padding-top:14px;border-top:1px solid rgba(212,175,55,.35);text-align:center;font-size:12px;letter-spacing:.08em;color:#b8b8b8}.creator-credit strong{color:#d4af37;font-weight:700;margin-left:5px}@media(max-width:600px){.creator-credit{font-size:10px;letter-spacing:.05em}}
+
+/* Owner + project management additions */
+.owner-badge{display:inline-flex;align-items:center;gap:10px;margin:12px 0 16px;padding:9px 16px;border:1px solid rgba(185,149,69,.5);border-radius:999px;background:rgba(255,255,255,.08);font-size:12px}
+.owner-badge span{letter-spacing:.14em;color:#b99545;font-weight:700}.owner-badge strong{font-weight:600}
+.project img{display:block}
+.project-body a{display:inline-block;margin-top:10px;color:inherit;font-weight:700;text-decoration:none}
+
+.projects .btn-outline{border:1px solid #0b151d;color:#0b151d}.projects .btn-outline:hover{background:#0b151d;color:#fff}
+
+
+/* IRD Infratech About Page */
+.pt-breadcrumb { position: relative; background: #1f1f1f; padding: 105px 0 90px; overflow: hidden; }
+.pt-breadcrumb:before { content: ""; position: absolute; inset: 0; background: url('../images/04.png') center/cover no-repeat; opacity: .18; }
+.pt-breadcrumb-inner { position: relative; z-index: 1; }
+.pt-breadcrumb-title { margin: 0 0 8px; font-size: 54px; line-height: 1.1; font-weight: 600; }
+.pt-breadcrumb-subtitle { margin: 0; opacity: .9; }
+.pt-breadcrumb-list { list-style: none; margin: 20px 0 0; padding: 0; }
+.pt-breadcrumb-list li { display: inline-block; color: #fff; margin-left: 8px; }
+.pt-breadcrumb-list li + li:before { content: "/"; margin-right: 8px; opacity: .6; }
+.pt-breadcrumb-list a { color: #fff; }
+.about-us.pt-section { padding: 110px 0; }
+
+
+/* IRD Infratech Pillar of Strength */
+.pillar-table-wrap { overflow-x:auto; }
+@media (max-width: 767px) {
+  .pt-breadcrumb-title { font-size: 38px; }
+  .pt-breadcrumb { padding: 75px 0 65px; }
+}
+
+
+/* =========================
+   ABOUT PAGE
+   ========================= */
+.about-page{background:#f5f4ef;color:#0b151d}
+.about-page .nav-links a.active{color:#a9d53b}
+.about-hero{min-height:590px;padding:170px 0 90px;background:#0b151d;color:#fff;position:relative;overflow:hidden}
+.about-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(11,21,29,.98) 0%,rgba(11,21,29,.88) 55%,rgba(11,21,29,.58) 100%)}
+.about-hero:after{content:"";position:absolute;width:620px;height:620px;border:1px solid rgba(169,213,59,.18);border-radius:50%;right:-160px;top:-190px;box-shadow:0 0 0 70px rgba(169,213,59,.025),0 0 0 140px rgba(169,213,59,.018)}
+.about-hero-grid{position:absolute;inset:0;opacity:.13;background-image:linear-gradient(rgba(255,255,255,.25) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.25) 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(90deg,#000,transparent 85%)}
+.about-hero-inner{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:end;gap:50px}
+.about-hero h1{font-size:clamp(48px,7vw,86px);letter-spacing:-4px;line-height:.96;margin:18px 0 28px}
+.about-hero h1 span{color:#a9d53b}
+.about-hero p{max-width:650px;color:#cbd4d9;font-size:19px}
+.about-hero-meta{border-left:1px solid rgba(255,255,255,.25);padding-left:24px;min-width:170px}
+.about-hero-meta span{display:block;color:#a9d53b;font-size:13px;font-weight:900;letter-spacing:2px;margin-bottom:8px}
+.about-hero-meta strong{font-size:12px;letter-spacing:2px}
+
+.about-intro{padding:115px 0;background:#fff}
+.about-intro-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:center}
+.about-visual{max-width:500px}
+.visual-frame{height:470px;background:#101e27;position:relative;overflow:hidden;border:12px solid #eef0e9;box-shadow:24px 24px 0 #dfe7d1}
+.visual-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(169,213,59,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(169,213,59,.14) 1px,transparent 1px);background-size:44px 44px}
+.visual-grid:after{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(169,213,59,.5);transform:rotate(45deg);left:105px;top:95px}
+.visual-logo{position:absolute;inset:0;display:grid;place-items:center}
+.visual-logo img{width:150px;height:150px;object-fit:contain;background:#fff;padding:10px;border-radius:4px;box-shadow:0 15px 45px rgba(0,0,0,.3)}
+.visual-label{position:absolute;left:22px;bottom:18px;color:#a9d53b;font-size:10px;letter-spacing:2px;font-weight:900}
+.visual-caption{display:flex;justify-content:space-between;margin-top:20px;font-size:10px;letter-spacing:1.8px;font-weight:900;color:#65727b}
+.visual-caption b{color:#0b7a4b}
+.about-copy-block h2{font-size:clamp(38px,4.5vw,62px);line-height:1.02;letter-spacing:-2.4px;margin-bottom:25px}
+.about-copy-block p{font-size:17px;color:#526069;max-width:720px}
+.about-copy-block p+p{margin-top:17px}
+.about-highlight{margin-top:32px;border-left:4px solid #a9d53b;background:#f5f4ef;padding:20px 24px}
+.about-highlight span{display:block;font-size:10px;letter-spacing:2px;font-weight:900;color:#0b7a4b;margin-bottom:6px}
+.about-highlight strong{font-size:17px}
+
+.about-capabilities{padding:110px 0;background:#0f1c24;color:#fff}
+.section-heading{display:grid;grid-template-columns:1fr .65fr;gap:60px;align-items:end}
+.section-heading h2{font-size:clamp(38px,5vw,60px);letter-spacing:-2.5px}
+.section-heading p{color:#aeb9bf;font-size:16px;max-width:480px}
+.capability-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.13);margin-top:60px}
+.capability{background:#0f1c24;padding:30px;min-height:280px;position:relative;transition:.25s}
+.capability:hover{background:#152630;transform:translateY(-5px)}
+.capability>span{color:#a9d53b;font-size:11px;letter-spacing:2px;font-weight:900}
+.capability-icon{width:45px;height:45px;border:1px solid rgba(169,213,59,.5);display:grid;place-items:center;color:#a9d53b;font-weight:900;margin:35px 0 22px}
+.capability h3{font-size:23px;margin-bottom:12px}
+.capability p{font-size:14px;color:#aeb9bf}
+
+.about-team{padding:115px 0;background:#f5f4ef}
+.team-heading{margin-bottom:60px}
+.team-list{display:grid;gap:14px}
+.team-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:stretch}
+.team-card{display:grid;grid-template-columns:65px 1fr;gap:18px;background:#fff;padding:28px 30px;border:1px solid #e5e8e1;transition:.25s}
+.team-card:hover{transform:translateX(5px);border-color:#cfd9c2}
+.team-number{font-size:12px;color:#0b7a4b;font-weight:900;letter-spacing:2px}
+.team-card h3{font-size:20px;margin-bottom:3px}
+.team-card span{font-size:11px;color:#0b7a4b;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.team-card p{font-size:14px;color:#65727b;margin-top:10px}
+.team-panel{background:#0b151d;min-height:430px;position:relative;overflow:hidden;color:#fff;padding:28px;display:flex;flex-direction:column;justify-content:space-between}
+.team-panel:after{content:"";position:absolute;width:340px;height:340px;border:1px solid rgba(169,213,59,.35);border-radius:50%;right:-110px;bottom:-110px}
+.team-panel-top,.team-panel-bottom{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center}
+.team-panel-top span{font-size:10px;letter-spacing:2px;color:#a9d53b;font-weight:900}
+.team-panel-top b{font-size:20px}
+.team-panel-lines{position:absolute;inset:80px 30px;background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:36px 36px}
+.team-panel-lines:after{content:"";position:absolute;width:210px;height:210px;border:1px solid rgba(169,213,59,.5);left:50%;top:50%;transform:translate(-50%,-50%) rotate(45deg)}
+.team-panel-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:18px}
+.team-panel-bottom strong{font-size:15px}
+.team-panel-bottom span{font-size:11px;color:#9ba8ae;letter-spacing:1px}
+
+.about-commitment{padding:105px 0;background:#a9d53b;color:#0b151d}
+.commitment-grid{display:grid;grid-template-columns:1fr .85fr;gap:90px;align-items:end}
+.commitment-grid h2{font-size:clamp(38px,5vw,62px);letter-spacing:-2.5px}
+.commitment-grid p{font-size:17px;max-width:600px;margin-bottom:28px}
+.commitment-grid .eyebrow{color:#0b7a4b}
+.commitment-grid .btn-primary{background:#0b151d;color:#fff}
+.commitment-grid .btn-primary:hover{background:#fff;color:#0b151d}
+
+.about-contact-strip{padding:32px 0;background:#0b151d;color:#fff}
+.about-contact-strip .container{display:flex;align-items:center;justify-content:space-between}
+.about-contact-strip span{font-size:11px;letter-spacing:2px;color:#aeb9bf;font-weight:900}
+.about-contact-strip a{color:#a9d53b;font-size:14px;font-weight:900;letter-spacing:1.5px}
+.about-contact-strip b{font-size:20px;margin-left:8px}
+.site-footer{background:#071017;color:#fff;padding:30px 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.footer-inner p{font-size:12px;color:#88959b;letter-spacing:1px}
+
+@media(max-width:900px){
+  .about-hero-inner,.section-heading,.commitment-grid,.team-layout,.about-intro-grid{grid-template-columns:1fr;display:grid}
+  .about-hero-inner{align-items:start}
+  .about-hero{padding-top:145px}
+  .about-hero-meta{margin-top:20px}
+  .about-intro-grid{gap:70px}
+  .about-visual{max-width:100%}
+  .capability-grid{grid-template-columns:repeat(2,1fr)}
+  .section-heading{gap:25px}
+  .team-layout{gap:35px}
+}
+@media(max-width:640px){
+  .nav-inner{height:68px}
+  .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:#0b151d;padding:20px 5%;flex-direction:column;gap:18px}
+  .nav-links.open{display:flex}
+  .menu{display:block}
+  .about-hero{min-height:560px;padding:125px 0 70px}
+  .about-hero h1{font-size:48px;letter-spacing:-2.5px}
+  .about-hero p{font-size:16px}
+  .about-intro,.about-team,.about-capabilities{padding:75px 0}
+  .visual-frame{height:360px;border-width:8px}
+  .visual-grid:after{width:210px;height:210px;left:50%;top:50%;margin:-105px}
+  .capability-grid{grid-template-columns:1fr}
+  .capability{min-height:220px}
+  .team-card{grid-template-columns:45px 1fr;padding:22px}
+  .team-panel{min-height:300px}
+  .commitment-grid{gap:35px}
+  .about-contact-strip .container,.footer-inner{flex-direction:column;align-items:flex-start;gap:14px}
+}
+
+/* Static-site enhancements */
+.md-static-photo{width:100%;height:430px;object-fit:contain;background:#fff;padding:35px;border:1px solid #d8ded5}
+.static-note{padding:18px 22px;background:#f5f4ef;border-left:4px solid #a9d53b;color:#526069}
+.no-data{padding:28px;background:#fff;border:1px solid #e2e6df;color:#65727b}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+
+/* Clear click affordance for Managing Director profile */
+.owner-profile-link{display:inline-block;color:inherit;text-decoration:none}
+.owner-profile-link .owner-badge{cursor:pointer;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+.owner-profile-link:hover .owner-badge,.owner-profile-link:focus-visible .owner-badge{transform:translateY(-2px);background:rgba(185,149,69,.14);border-color:#b99545}
+.owner-badge em{font-style:normal;font-size:9px;letter-spacing:.12em;color:#b99545;font-weight:800;margin-left:5px;white-space:nowrap}
+
+</style>
+
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IRD Infratech Private Limited | Construction &amp; Infrastructure</title>
 <meta name="description" content="IRD Infratech Private Limited — construction and infrastructure company based in Modinagar, Uttar Pradesh. Quality First, Speed Always.">
-<link rel="stylesheet" href="css/style.css">
 <style>
 .owner-profile-link{text-decoration:none;color:inherit;display:inline-block}
 .owner-profile-link:hover{opacity:.9}
 </style>
-</head>
+<style>
+.projects .project-grid{grid-template-columns:repeat(3,1fr);gap:22px}
+.projects .project{height:100%;display:flex}
+.projects .project-body{width:100%;display:flex;flex-direction:column}
+.projects .project-body h3{margin-bottom:16px}
+.projects .project-body p{margin:5px 0}
+.projects .project-body .btn{margin-top:auto;align-self:flex-start}
+.projects-cta{text-align:center;margin-top:28px}
+@media(max-width:900px){.projects .project-grid{grid-template-columns:1fr}}
+</style>
+<style>
+.office-details{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px}
+.office-block{padding:20px;border:1px solid rgba(16,32,45,.1);border-radius:14px}
+.office-block h3{margin:0 0 9px;font-size:15px}
+.office-block p{margin:0;line-height:1.6}
+.office-block a{color:inherit;text-decoration:none;font-weight:700}
+@media(max-width:800px){.office-details{grid-template-columns:1fr}}
+</style><style id="contact-office-links">
+#contact .details .detail a{color:inherit;text-decoration:none}
+#contact .details .detail a:hover{text-decoration:underline}
+</style><style>
+.dev-profile-cta{display:inline-block;margin-right:8px;padding:5px 9px;border:1px solid currentColor;border-radius:999px;font-size:.78em;font-weight:800;letter-spacing:.04em;text-decoration:none;transition:.2s}
+.dev-profile-cta:hover{opacity:.78;transform:translateY(-1px)}
+</style><style>
+.creator-credit{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:6px 9px;text-align:center}
+.website-credit{opacity:.78}
+.dev-profile-credit{display:inline-flex!important;align-items:center;gap:10px;padding:9px 14px;border:1px solid rgba(199,164,90,.65);border-radius:999px;background:linear-gradient(135deg,rgba(199,164,90,.14),rgba(199,164,90,.04));color:inherit!important;text-decoration:none!important;box-shadow:0 4px 16px rgba(0,0,0,.08);transition:.25s ease}
+.dev-profile-name{font-weight:900;text-decoration:underline;text-underline-offset:3px}
+.dev-profile-view{font-size:10px;font-weight:900;letter-spacing:.09em;padding-left:10px;border-left:1px solid rgba(199,164,90,.55);white-space:nowrap}
+.dev-profile-credit:hover{transform:translateY(-2px);border-color:#c7a45a;box-shadow:0 8px 24px rgba(0,0,0,.15)}
+</style></head>
 <body>
 <header class="nav">
   <div class="container nav-inner">
@@ -23,8 +277,8 @@
       <a href="about.html">About</a>
       <a href="pillar-of-strength.html">Pillar of Strength</a>
       <a href="clients.html">Clients</a>
-      <a href="index.html#services">Services</a>
-      <a href="projects.html">Projects</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a><a href="careers.html">Careers</a>
       <a href="index.html#contact">Contact</a>
     </nav>
   </div>
@@ -33,9 +287,7 @@
 <section id="home" class="hero">
   <div class="container hero-content reveal">
     <div class="kicker">CONSTRUCTION • INFRASTRUCTURE • ENGINEERING</div>
-    <a href="managing-director.html" class="owner-profile-link" aria-label="View Managing Director profile">
-      <div class="owner-badge"><span>MANAGING DIRECTOR</span><strong>David Teotia (Vineet Kumar)</strong></div>
-    </a>
+    <a href="managing-director.html" class="owner-profile-link" aria-label="Open Managing Director profile"><div class="owner-badge"><span>MANAGING DIRECTOR</span><strong>David Teotia (Vineet Kumar)</strong><em>VIEW PROFILE →</em></div></a>
     <h1>Building the infrastructure that moves us forward.</h1>
     <p>IRD Infratech Private Limited is a construction and infrastructure company based in Modinagar, Uttar Pradesh.</p>
     <div class="tagline">QUALITY FIRST, SPEED ALWAYS</div>
@@ -71,41 +323,33 @@
   <div class="container">
     <div class="eyebrow">CAPABILITIES</div>
     <h2>What we do</h2>
-    <p style="color:#aeb9bf;margin-top:12px">Construction and infrastructure capabilities for roads, bridges, highways and civil works.</p>
+    <p style="color:#aeb9bf;margin-top:12px">Specialized construction and infrastructure services delivered with quality, safety and timely execution.</p>
     <div class="service-grid">
-      <article class="service reveal"><div class="num">01</div><h3>Road Construction</h3><p>Infrastructure and roadway construction services.</p></article>
-      <article class="service reveal"><div class="num">02</div><h3>Bridge Construction</h3><p>Bridge and structural infrastructure work.</p></article>
-      <article class="service reveal"><div class="num">03</div><h3>Highway Infrastructure</h3><p>Large-scale transportation infrastructure.</p></article>
-      <article class="service reveal"><div class="num">04</div><h3>Civil Works</h3><p>Civil engineering and construction capabilities.</p></article>
+      <article class="service reveal"><div class="num">01</div><h3>RE Wall Work</h3><p>Construction and installation of reinforced earth walls using T-shape RE panels for slope stabilization and land retention.</p></article>
+      <article class="service reveal"><div class="num">02</div><h3>Pre-Cast Boundary Wall Work</h3><p>Supply and installation of durable pre-cast boundary walls for secure and long-lasting site protection.</p></article>
+      <article class="service reveal"><div class="num">03</div><h3>Structure Work</h3><p>R.O.B., M.N.B., flyovers, box-culverts and other major civil and structural infrastructure works.</p></article>
+      <article class="service reveal"><div class="num">04</div><h3>Pre-Cast Crash Barrier</h3><p>Manufacturing and installation of pre-cast crash barriers for highway safety, traffic separation and protection.</p></article>
+      <article class="service reveal"><div class="num">05</div><h3>Fibre Cable Work</h3><p>OFC and fibre-cable infrastructure work including trenching, ducting, laying and road-corridor reinstatement.</p></article>
     </div>
   </div>
 </section>
 
 <section id="projects" class="projects">
-  <div class="container">
-    <div class="eyebrow">OUR WORK</div>
-    <h2>Recent Projects</h2>
-    <p class="project-note">Explore our latest infrastructure work.</p>
-    <div class="project-grid">
-      <article class="project reveal">
-        <div class="project-placeholder">PROJECT DETAILS TO BE PUBLISHED</div>
-        <div class="project-body">
-          <small>PROJECTS</small>
-          <h3>Recent project information</h3>
-          <p>No specific project has been published in the provided website information yet.</p>
-          <a class="btn btn-primary" href="projects.html">VIEW ALL PROJECTS →</a>
-        </div>
-      </article>
-    </div>
-  </div>
+<div class="container">
+<div class="eyebrow">CURRENT PROJECTS</div>
+<h2>Ongoing Projects</h2>
+<p class="project-note">Explore our current infrastructure projects under execution.</p>
+<div class="project-grid"><article class="project reveal"><div class="project-body"><small>ONGOING PROJECT</small><h3>RE WALL CONSTRUCTION WORK OF FOUR LANE BEAS- BATALA -DERA BABA NANAK HIGHWAY (NH-503) D</h3><p><strong>Status:</strong> Under Execution</p><a class="btn btn-primary" href="projects.html">VIEW PROJECT DETAILS →</a></div></article><article class="project reveal"><div class="project-body"><small>ONGOING PROJECT</small><h3>RE WALL WORK AND FSCB (PRECAST CASTING &amp; ERECTION ) WORK MORADABAD -KASHIPUR PKG 2</h3><p><strong>Status:</strong> Under Execution</p><a class="btn btn-primary" href="projects.html">VIEW PROJECT DETAILS →</a></div></article><article class="project reveal"><div class="project-body"><small>ONGOING PROJECT</small><h3>RE WALL WORK AND FSCB (PRECAST CASTING &amp; ERECTION ) WORK MORADABAD -KASHIPUR PKG 3</h3><p><strong>Status:</strong> Under Execution</p><a class="btn btn-primary" href="projects.html">VIEW PROJECT DETAILS →</a></div></article></div>
+<div class="projects-cta"><a class="btn btn-outline" href="projects.html">VIEW ALL PROJECTS →</a></div>
+</div>
 </section>
 
 <section class="stats">
   <div class="container stat-grid">
     <div class="stat reveal"><strong>2024</strong><span>Established</span></div>
-    <div class="stat reveal"><strong>—</strong><span>Completed Projects</span></div>
+    <div class="stat reveal"><strong>27</strong><span>Completed Projects</span></div>
     <div class="stat reveal"><strong>UP</strong><span>Primary Location</span></div>
-    <div class="stat reveal"><strong>—</strong><span>Major Projects</span></div>
+    <div class="stat reveal"><strong>03</strong><span>Major Projects</span></div>
   </div>
 </section>
 
@@ -116,18 +360,19 @@
       <h2>Let's build something meaningful.</h2>
       <p class="contact-copy">For business enquiries and project discussions, contact IRD Infratech Private Limited.</p>
       <div class="details">
-        <div class="detail"><div class="icon">☎</div><div><strong>Phone</strong><span>9997300570</span></div></div>
+        <div class="detail"><div class="icon">☎</div><div><strong>IRD Management Team</strong><span><a href="tel:9012133500">9012133500</a><br><a href="tel:9012133600">9012133600</a></span></div></div>
         <div class="detail"><div class="icon">✉</div><div><strong>Email</strong><span>irdteotia1981@gmail.com</span></div></div>
-        <div class="detail"><div class="icon">⌖</div><div><strong>Office</strong><span>C-37 Kaveri Enclave, Modi Pon Colony, Modinagar, Ghaziabad, Uttar Pradesh PIN Code – 201204</span></div></div>
+        <div class="detail"><div class="icon">⌖</div><div><strong>Registered Office</strong><span>C-37 Kaveri Enclave, Modi Pon Colony, Modinagar, Ghaziabad, Uttar Pradesh PIN Code – 201204</span></div></div>
+        <div class="detail"><div class="icon">☎</div><div><strong>Director / Manager</strong><span><a href="tel:9997300570">9997300570</a></span></div></div><div class="detail"><div class="icon">⌂</div><div><strong>Corporate Office</strong><span>Flat No. S-6, 2nd Floor Ratan Furniture and Building Near Modinagar South Rapid Station</span></div></div>
       </div>
     </div>
     <div class="contact-box reveal">
       <h3>Start a conversation.</h3>
       <p>Reach us directly for construction and infrastructure enquiries.</p>
       <div class="quick">
-        <a href="tel:+919997300570">CALL NOW</a>
+        <a href="tel:9997300570">CALL NOW</a>
         <a href="mailto:irdteotia1981@gmail.com">EMAIL US</a>
-        <a href="https://wa.me/919997300570" target="_blank" rel="noopener">WHATSAPP</a>
+        <a href="https://wa.me/9012133500" target="_blank" rel="noopener">WHATSAPP</a>
       </div>
     </div>
   </div>
@@ -141,8 +386,23 @@
     </div>
     <p>Quality First, Speed Always</p>
   </div>
-  <div class="creator-credit">Website Designed &amp; Developed by <strong>Devanshul Grewal</strong></div>
+  <div class="creator-credit"><span class="website-credit">Website Designed &amp; Developed by</span> <a href="devanshul-grewal.html" title="View Devanshul Grewal profile" class="dev-profile-credit"><span class="dev-profile-name">Devanshul Grewal</span><span class="dev-profile-view">VIEW PROFILE →</span></a></div>
+
+<div class="office-details">
+  <div class="office-block">
+    <h3>Registered Office</h3>
+    <p>C-37 Kaveri Enclave, Modi Pon Colony, Modinagar, Ghaziabad, Uttar Pradesh PIN Code – 201204</p>
+  </div>
+  <div class="office-block">
+    <h3>Corporate Office</h3>
+    <p>Flat No. S-6, 2nd Floor Ratan Furniture and Building Near Modinagar South Rapid Station</p>
+  </div>
+  <div class="office-block">
+    <h3>IRD Management Team</h3>
+    <p><a href="tel:9012133500">9012133500</a></p>
+  </div>
+</div>
 </footer>
-<script src="js/script.js"></script>
+<script src="/js/script.js"></script>
 </body>
 </html>
